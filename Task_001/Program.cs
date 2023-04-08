@@ -9,3 +9,16 @@ int lengthResult = GetSizeArray(array, maxSim);
 string[] arrayResult = GetArray2(lengthResult, array, maxSim);
 Console.Write("Результирующий массив: ");
 Console.WriteLine($"[{String.Join(", ", arrayResult)}]");
+
+// Описание метода GetArray  - пользователь вводит элементы массива колличеством равным length
+
+string[] GetArray(int index)
+{
+    string[] result = new string[index];
+    for (int i = 0; i < index; i++)
+    {
+        Console.WriteLine($"Введите {i+1}-й элемент массива");
+        result[i] = Console.ReadLine() ?? "";
+    }
+    return result;
+}
