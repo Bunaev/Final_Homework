@@ -10,6 +10,20 @@ string[] arrayResult = GetArray2(lengthResult, array, maxSim);
 Console.Write("Результирующий массив: ");
 Console.WriteLine($"[{String.Join(", ", arrayResult)}]");
 
+// Описание метода ImputNumber для ввода целых положительных чисел больше единицы
+
+int ImputNumber(string message, string errorMessage)
+{
+    while (true)
+    {
+        Console.WriteLine(message);
+        bool isCorrect = int.TryParse(Console.ReadLine(), out int userNumber);
+        if (isCorrect && userNumber > 1)
+            return userNumber;
+        Console.WriteLine(errorMessage);
+    }
+}
+
 // Описание метода GetArray  - пользователь вводит элементы массива колличеством равным length
 
 string[] GetArray(int index)
