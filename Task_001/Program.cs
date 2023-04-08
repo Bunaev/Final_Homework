@@ -8,7 +8,7 @@ Console.Write("Исходный массив: ");
 Console.WriteLine($"[{String.Join(", ", array)}]");
 
 int lengthResult = GetSizeArray(array, maxSim);
-string[] arrayResult = GetArray2(lengthResult, array, maxSim);
+string[] arrayResult = GetNewArray(lengthResult, array, maxSim);
 
 Console.Write("Результирующий массив: ");
 Console.WriteLine($"[{String.Join(", ", arrayResult)}]");
@@ -53,4 +53,21 @@ int GetSizeArray(string[] array, int max)
         }
     }
     return k;
+}
+
+// Описание метода GetNewArray - заполняет новый массив элементами, если они соответствуют условиям
+
+string[] GetNewArray(int length, string[] array, int max)
+{
+    string[] result = new string[length];
+    int k = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+            if (array[i].Length <= max)
+            {
+                result[k] = array[i];
+                k++;
+            }
+    }
+    return result;
 }
