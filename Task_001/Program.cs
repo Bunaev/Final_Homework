@@ -8,10 +8,17 @@ Console.Write("Исходный массив: ");
 Console.WriteLine($"[{String.Join(", ", array)}]");
 
 int lengthResult = GetSizeArray(array, maxSim);
+if (lengthResult == 0)
+{
+    Console.WriteLine($"В заданном массиве отсутствуют элементы с длинной символов меньше либо равной {maxSim}");
+}
+else
+{
 string[] arrayResult = GetNewArray(lengthResult, array, maxSim);
 
 Console.Write("Результирующий массив: ");
 Console.WriteLine($"[{String.Join(", ", arrayResult)}]");
+}
 
 // Описание метода ImputNumber для ввода целых положительных чисел больше единицы
 
